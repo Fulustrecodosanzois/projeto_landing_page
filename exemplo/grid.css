@@ -1,0 +1,4 @@
+.bloco{background-color: coral; border: 1px solid black;}
+
+body{display: grid; grid-template-columns: 30% 50% 20%; height: 100vh;}/* grid-template-columns dividide em duas colunas, 30% será para uma coluna e 70% será para a outra */
+ 
