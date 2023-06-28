@@ -1,4 +1,19 @@
 .bloco{background-color: coral; border: 1px solid black;}
 
-body{display: grid; grid-template-columns: 30% 50% 20%; height: 100vh;}/* grid-template-columns dividide em duas colunas, 30% será para uma coluna e 70% será para a outra */
- 
+body{
+    display: grid; 
+    grid-template-columns: 70% 30%; /* grid-template-columns dividide em duas colunas, 30% será para uma coluna e 70% será para a outra */
+    height: 100vh;
+    /* o grid-template-areas cria um esqueleto que possibilita a separação dos elementos dividindo em colunas e linhas*/
+    grid-template-areas: 'header main'
+                         'aside aside'  
+                         'footer footer';
+                        }  
+
+header{grid-area: header;}/* aqui se escolheu o header para ocupar as duas colunas*/
+
+main{grid-area: main;}
+
+aside{grid-area: aside;}
+
+footer{grid-area: footer;}
