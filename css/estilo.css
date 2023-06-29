@@ -13,7 +13,7 @@ body{font-family: arial; color: #fff;display: grid; grid-template-columns: 75% 2
 
 /* HEADER */
 header{grid-area: cabecalho;}
-.logo h1{color: #274085;}
+.logo h1{color: #274085; margin-left: 10px;}
 .logo img{width: 80px;}
 .logo{display: flex; align-items: center; padding: 10px 30px;}/* permite os elementos se ajustarem. a principio eles ficam alinhados em seguênvcia em uma linha*/
 
