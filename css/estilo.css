@@ -4,46 +4,62 @@
     box-sizing: border-box; 
     outline: none;}
 
+/*VARIÁVEIS*/
+:root{
+    --cor_azul: #274083
+}
+/*exemplo para chamar variável color: var(--cor_azul)*/
+
 body{font-family: arial; 
     color: #fff;
     display: grid; 
     grid-template-columns: 75% 25%;
-
     grid-template-areas: 'cabecalho formulario'
                          'principal formulario'
                          'rodape formulario';
                             /* os elementos são alinhados conforme posicionados no grid-template-areas*/
-    
     height: 100vh;
 }
 
 /* HEADER */
 header{grid-area: cabecalho;}
-.logo h1{color: #274085; 
+.logo h1{color: var(--cor_azul); 
         margin-left: 10px;}
-.logo img{width: 80px;}
-.logo{display: flex; align-items: center; padding: 10px 30px; }/* permite os elementos se ajustarem. a principio eles ficam alinhados em seguênvcia em uma linha*/
 
+.logo img{width: 80px;}
+
+.logo{display: flex; 
+    align-items: center; 
+    padding: 10px 30px; }/* permite os elementos se ajustarem. a principio eles ficam alinhados em seguênvcia em uma linha*/
 
 /* MAIN */
 main{ grid-area: principal; 
-    background: linear-gradient(to right, #48a0df, #274083);
+    background: linear-gradient(to right, #48a0df, var(--cor_azul));
     display: flex; /*display : flex ajusta em linha os itens*/
     align-items: center; 
     padding-left: 50px;
-    padding-top: 10px ;
+    padding-top: 10px;
     padding-bottom: 5px;
     line-height: 1cm;
-
 }
 
 main figure{width: 200px;}
 main figure img{width: 100%;}
-main h1{font-size: 40px; width: 80%; margin-bottom: 40px;}
+main h1{font-size: 40px; 
+    width: 80%; 
+    margin-bottom: 40px;}
 main h3{width: 80%;}
 
 /* ASIDE */
-aside{grid-area: formulario; background-color: #274083;}
+aside{grid-area: formulario; 
+    background-color: var(--cor_azul);}
 
 /* FOOTER */
-footer{grid-area: rodape;}
+footer{grid-area: rodape;
+    display: flex;
+    background-color: #ccc;
+    color:var(--cor_azul); padding: 30px;}
+
+footer section{margin: 5px 20px;}
+footer .rodape-titulo{margin-bottom: 20px;}
+footer .rodape-conteudo{text-align: justify; line-height: 0.7cm;}
