@@ -53,6 +53,26 @@ main h3{width: 80%;}
 /* ASIDE */
 aside{grid-area: formulario; 
     background-color: var(--cor_azul);}
+aside h1{text-align: center; margin-bottom: 20px;margin-top: 20px;}
+aside form {width: 90%; 
+           margin: 0 auto; 
+           display: flex; 
+           flex-direction: column; 
+           gap: 20px; }
+aside input, aside select, aside button {padding: 15px;font-size: 16px; border: none;}
+::placeholder{color: black;}/* como chamar um elemnto, neste caso todas as placeholder de todo o site*/
+aside select:focus, aside input:focus{outline: 3px solid #48a0df;}
+aside:where(input, select):focus{outline: 3px solid #48a0df;}
+/*formas de chamar o focus para varios elementos*/
+
+aside button{background-color: #11dd2c;
+             cursor: pointer;
+             transition: all 0.2s linear;}
+
+aside button:hover{box-shadow: 0 0 10px #80e7a8;
+                    transition: all 0.2s linear;}
+
+aside small{margin-top:20px; margin-bottom: 20px;padding: 10px; display: block; text-align: center;}
 
 /* FOOTER */
 footer{grid-area: rodape;
@@ -63,3 +83,4 @@ footer{grid-area: rodape;
 footer section{margin: 5px 20px;}
 footer .rodape-titulo{margin-bottom: 20px;}
 footer .rodape-conteudo{text-align: justify; line-height: 0.7cm;}
+
