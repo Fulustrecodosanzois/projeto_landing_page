@@ -1,86 +1,201 @@
 /* RESET*/
-* {margin: 0;
-    padding: 0; 
-    box-sizing: border-box; 
-    outline: none;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
 
 /*VARIÁVEIS*/
-:root{
-    --cor_azul: #274083
+:root {
+  --cor_azul: #274083;
 }
 /*exemplo para chamar variável color: var(--cor_azul)*/
 
-body{font-family: arial; 
-    color: #fff;
-    display: grid; 
-    grid-template-columns: 75% 25%;
-    grid-template-areas: 'cabecalho formulario'
-                         'principal formulario'
-                         'rodape formulario';
-                            /* os elementos são alinhados conforme posicionados no grid-template-areas*/
-    height: 100vh;
+body {
+  font-family: arial;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-areas:
+    "cabecalho formulario"
+    "principal formulario"
+    "rodape formulario";
+  /* os elementos são alinhados conforme posicionados no grid-template-areas*/
+  height: 100vh;
 }
 
 /* HEADER */
-header{grid-area: cabecalho;}
-.logo h1{color: var(--cor_azul); 
-        margin-left: 10px;}
-
-.logo img{width: 80px;}
-
-.logo{display: flex; 
-    align-items: center; 
-    padding: 10px 30px; }/* permite os elementos se ajustarem. a principio eles ficam alinhados em seguênvcia em uma linha*/
-
-/* MAIN */
-main{ grid-area: principal; 
-    background: linear-gradient(to right, #48a0df, var(--cor_azul));
-    display: flex; /*display : flex ajusta em linha os itens*/
-    align-items: center; 
-    padding-left: 50px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    line-height: 1cm;
+header {
+  grid-area: cabecalho;
+}
+.logo h1 {
+  color: var(--cor_azul);
+  margin-left: 10px;
 }
 
-main figure{width: 200px;}
-main figure img{width: 100%;}
-main h1{font-size: 40px; 
-    width: 80%; 
-    margin-bottom: 40px;}
-main h3{width: 80%;}
+.logo img {
+  width: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+} /* permite os elementos se ajustarem. a principio eles ficam alinhados em seguênvcia em uma linha*/
+
+/* MAIN */
+main {
+  grid-area: principal;
+  background: linear-gradient(to right, #48a0df, var(--cor_azul));
+  display: flex; /*display : flex ajusta em linha os itens*/
+  align-items: center;
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  line-height: 1cm;
+}
+
+main figure {
+  width: 200px;
+}
+main figure img {
+  width: 100%;
+}
+main h1 {
+  font-size: 40px;
+  width: 80%;
+  margin-bottom: 40px;
+}
+main h3 {
+  width: 80%;
+}
 
 /* ASIDE */
-aside{grid-area: formulario; 
-    background-color: var(--cor_azul);}
-aside h1{text-align: center; margin-bottom: 20px;margin-top: 20px;}
-aside form {width: 90%; 
-           margin: 0 auto; 
-           display: flex; 
-           flex-direction: column; 
-           gap: 20px; }
-aside input, aside select, aside button {padding: 15px;font-size: 16px; border: none;}
-::placeholder{color: black;}/* como chamar um elemnto, neste caso todas as placeholder de todo o site*/
-aside select:focus, aside input:focus{outline: 3px solid #48a0df;}
-aside:where(input, select):focus{outline: 3px solid #48a0df;}
+aside {
+  grid-area: formulario;
+  background-color: var(--cor_azul);
+}
+aside h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+aside form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+aside input,
+aside select,
+aside button {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+}
+::placeholder {
+  color: black;
+} /* como chamar um elemnto, neste caso todas as placeholder de todo o site*/
+/* aside select:focus,
+aside input:focus {
+  outline: 3px solid #48a0df;
+} */
+aside :where(input, select):focus {
+  /*O :where não pode estar colado ao aside*/
+  outline: 3px solid #48a0df;
+}
 /*formas de chamar o focus para varios elementos*/
 
-aside button{background-color: #11dd2c;
-             cursor: pointer;
-             transition: all 0.2s linear;}
+aside button {
+  background-color: #11dd2c;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
 
-aside button:hover{box-shadow: 0 0 10px #80e7a8;
-                    transition: all 0.2s linear;}
+aside button:hover {
+  box-shadow: 0 0 10px #80e7a8;
+  transition: all 0.2s linear;
+}
 
-aside small{margin-top:20px; margin-bottom: 20px;padding: 10px; display: block; text-align: center;}
+aside small {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: block;
+  text-align: center;
+}
 
 /* FOOTER */
-footer{grid-area: rodape;
-    display: flex;
-    background-color: #ccc;
-    color:var(--cor_azul); padding: 30px;}
+footer {
+  grid-area: rodape;
+  display: flex;
+  background-color: #ccc;
+  color: var(--cor_azul);
+  padding: 30px;
+}
 
-footer section{margin: 5px 20px;}
-footer .rodape-titulo{margin-bottom: 20px;}
-footer .rodape-conteudo{text-align: justify; line-height: 0.7cm;}
+footer section {
+  margin: 5px 20px;
+}
+footer .rodape-titulo {
+  margin-bottom: 20px;
+}
+footer .rodape-conteudo {
+  text-align: justify;
+  line-height: 0.7cm;
+}
 
+/*RESPONSIVIDADE---------------------------------*/
+
+/* TABLET */
+@media screen and (max-width: 1200px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "cabecalho"
+      "principal"
+      "rodape"
+      "formulario";
+  }
+  main figure {
+    margin-right: 40px;
+  }
+  main {
+    height: 50vh;
+  }
+  main h1 {
+    font-size: 30px;
+  }
+
+  main h3 {
+    font-weight: lighter;
+    line-height: 1.4;
+    font-size: 17px;
+  }
+}
+
+/* SMARTPHONE */
+@media screen and (max-width: 750px) {
+  main {
+    background: #48a0df url(../imagens/livro2.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+  }
+  main figure {
+    display: none;
+  }
+  main h1,
+  main h3 {
+    text-align: center;
+    margin-left: 10px;
+    text-shadow: 2px 1px 2px #000; /* 1° eixo x 2° eixo y 3° esfumato 4° a cor*/
+  }
+  footer {
+    flex-direction: column;
+    row-gap: 20px; /*gap é uma lacuna, espaço*/
+  }
+}
