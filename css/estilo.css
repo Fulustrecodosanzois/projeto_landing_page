@@ -178,6 +178,12 @@ footer .rodape-conteudo {
 
 /* SMARTPHONE */
 @media screen and (max-width: 750px) {
+  header h1{
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
   main {
     background: #48a0df url(../imagens/livro2.png);
     background-size: 200px;
